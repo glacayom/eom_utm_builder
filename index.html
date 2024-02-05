@@ -9,9 +9,15 @@
 <body>
 
 <div class="container">
+
+    <div class="url-display-container">
+        <input type="text" id="generatedUrl" readonly>
+        <button onclick="copyToClipboard()">Copiar URL</button>
+      </div>
+          
     <h1>EOM UTM Builder</h1>
   
-    <form action="/submitForm" class="form-container" id="utmForm">
+    <form class="form-container" id="utmForm">
         <label for="language"><b>Idioma</b></label>
         <select name="language" id="language">
             <option value="es">Español</option>

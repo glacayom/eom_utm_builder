@@ -61,3 +61,30 @@ h1 {
     opacity: 1;
   }
   
+  /* ... (tu CSS existente) ... */
+
+.url-display-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #generatedUrl {
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    flex-grow: 1;
+  }
+  
+  .url-display-container button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .url-display-container button:hover {
+    opacity: 0.8;
+  }

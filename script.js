@@ -1,7 +1,7 @@
 // script.js
   
   // Capturar el evento de envío del formulario para crear la URL
-  document.querySelector('.form-container').addEventListener('submit', function(event) {
+  document.getElementById('utmForm').addEventListener('submit', function(event) {
     event.preventDefault();
     // Obtener los valores del formulario
     const language = document.querySelector('select[name="language"]').value;
@@ -23,10 +23,19 @@
     // Construir la URL con parámetros UTM
     const utmUrl = `${baseUrl}?utm_source=${encodeURIComponent(source)}&utm_medium=${encodeURIComponent(medium)}&utm_campaign=${encodeURIComponent(campaign)}${content ? '&utm_content=' + encodeURIComponent(content) : ''}${term ? '&utm_term=' + encodeURIComponent(term) : ''}`;
 
-    // Aquí puedes hacer lo que necesites con la URL, como mostrarla al usuario o enviarla a un servidor
-    console.log(utmUrl); // Muestra la URL en la consola por ahora
-    alert(utmUrl); // Muestra la URL en un alerta para fines demostrativos
+  // Mostrar la URL generada en el input
+  document.getElementById('generatedUrl').value = utmUrl;
   });
+
+  // Función para copiar la URL al portapapeles
+function copyToClipboard() {
+    const urlField = document.getElementById('generatedUrl');
+    urlField.select();
+    document.execCommand('copy');
+  }
+  
+  // Asegúrate de asignar la función correcta al evento de envío del formulario
+  document.getElementById('utmForm').addEventListener('submit', handleFormSubmit);
   
 
   
