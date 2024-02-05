@@ -1,1 +1,46 @@
-<h2>test</h2>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario UTM</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>EOM UTM Builder</h1>
+  
+    <form action="/submitForm" class="form-container" id="utmForm">
+        <label for="language"><b>Idioma</b></label>
+        <select name="language" id="language">
+            <option value="es">Español</option>
+            <option value="en">Inglés</option>
+        </select>
+
+    <label for="landingPath"><b>Path de la Landing Page (opcional)</b></label>
+    <input type="text" placeholder="/ejemplo-path" name="landingPath">    
+
+    <label for="campaign"><b>Campaña</b></label>
+    <input type="text" placeholder="Ingresa la campaña" name="campaign" required>
+
+    <label for="source"><b>Fuente</b></label>
+    <input type="text" placeholder="Ingresa la fuente" name="source" required>
+
+    <label for="medium"><b>Medio</b></label>
+    <input type="text" placeholder="Ingresa el medio" name="medium" required>
+
+    <label for="content"><b>Contenido</b></label>
+    <input type="text" placeholder="Ingresa el contenido" name="content">
+
+    <label for="term"><b>Término</b></label>
+    <input type="text" placeholder="Ingresa el término" name="term">
+
+    <!-- Botones para enviar o cerrar el formulario -->
+    <button type="submit" class="btn">Crear URL</button>
+    </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
