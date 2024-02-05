@@ -17,7 +17,7 @@
           
     <h1>EOM UTM Builder</h1>
   
-    <form class="form-container" id="utmForm">
+    <div class="form-container" id="utmForm">
         <label for="language"><b>Idioma</b></label>
         <select name="language" id="language">
             <option value="es">Español</option>
@@ -27,24 +27,44 @@
     <label for="landingPath"><b>Path de la Landing Page (opcional)</b></label>
     <input type="text" placeholder="/ejemplo-path" name="landingPath">    
 
-    <label for="campaign"><b>Campaña</b></label>
-    <input type="text" placeholder="Ingresa la campaña" name="campaign" required>
-
     <label for="source"><b>Fuente</b></label>
-    <input type="text" placeholder="Ingresa la fuente" name="source" required>
+    <select name="source" id="source" required>
+      <option value="">Selecciona una fuente</option>
+      <option value="google">Google</option>
+      <option value="facebook">Facebook</option>
+      <option value="instagram">Instagram</option>
+      <option value="tiktok">TikTok</option>
+      <option value="email">Email</option>
+      <option value="bing">Bing</option>
+      <option value="gbp">GBP</option>
+    </select>
 
     <label for="medium"><b>Medio</b></label>
-    <input type="text" placeholder="Ingresa el medio" name="medium" required>
+    <select name="medium" id="medium" required>
+      <option value="">Selecciona un medio</option>
+      <option value="organic">Organic</option>
+      <option value="gbp">GBP</option>
+      <option value="cpc">CPC</option>
+      <option value="paid">Paid</option>
+      <option value="newsletter">Newsletter</option>
+    </select>
+
+
+
+    <label for="campaign"><b>Campaña</b></label>
+    <input type="text" placeholder="Ingresa la campaña" name="campaign" required> 
+    
+    <label for="term"><b>Término</b></label>
+    <input type="text" placeholder="elite+online+media" name="term">
 
     <label for="content"><b>Contenido</b></label>
-    <input type="text" placeholder="Ingresa el contenido" name="content">
+    <input type="text" placeholder="video" name="content">
 
-    <label for="term"><b>Término</b></label>
-    <input type="text" placeholder="Ingresa el término" name="term">
 
     <!-- Botones para enviar o cerrar el formulario -->
-    <button type="submit" class="btn">Crear URL</button>
-    </form>
+    <button type="button" class="btn" id="createUrlBtn">Crear URL</button>
+
+    </div>
 </div>
 
 <script src="script.js"></script>
