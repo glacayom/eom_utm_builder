@@ -1,4 +1,7 @@
 /* styles.css */
+body{
+  font-family:'Lato', Courier, monospace;
+}
 
 /* Estilo del contenedor principal */
 .container {
@@ -51,6 +54,7 @@ h1 {
     width: 100%;
     margin-bottom:10px;
     opacity: 0.8;
+    list-style: none;
   }
   
   .form-container .cancel {

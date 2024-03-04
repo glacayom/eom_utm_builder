@@ -1,7 +1,7 @@
 function generateUrl() {
   
     // Obtener los valores del formulario
-    const language = document.querySelector('select[name="language"]').value;
+    const baseUrlSelection = document.querySelector('select[name="baseUrlSelection"]').value;
     const landingPath = document.querySelector('input[name="landingPath"]').value.trim();
     const source = document.querySelector('select[name="source"]').value;
     const medium = document.querySelector('select[name="medium"]').value;
@@ -9,7 +9,7 @@ function generateUrl() {
     const term = document.querySelector('input[name="term"]').value.toLowerCase();
     const content = document.querySelector('input[name="content"]').value.toLowerCase();
 
-    let baseUrl = language === 'es' ? 'https://www.eliteonlinemedia.com/es/' : 'https://www.eliteonlinemedia.com/';
+    let baseUrl = baseUrlSelection;
 
   // Añadir el path de la landing page si está presente
   // Añadir el path de la landing page si está presente
@@ -36,6 +36,30 @@ function copyToClipboard() {
 
   // Escuchar el evento de clic en el botón en lugar del evento de envío del formulario
 document.getElementById('createUrlBtn').addEventListener('click', generateUrl);
+
+function cleanLandingPath(inputValue) {
+  // Eliminar protocolo (http, https)
+  let path = inputValue.replace(/^https?:\/\//, '');
+
+  // Eliminar dominio
+  path = path.substring(path.indexOf('/') + 1);
+
+  // Eliminar slash inicial si existe
+  if (path.startsWith('/')) {
+    path = path.substring(1);
+  }
+
+  // Eliminar slash final si existe
+  if (path.endsWith('/')) {
+    path = path.slice(0, -1);
+  }
+
+  return path;
+}
   
+
+document.getElementById('landingPath').addEventListener('blur', function() {
+  this.value = cleanLandingPath(this.value);
+});
 
   
